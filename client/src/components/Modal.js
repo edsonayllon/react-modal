@@ -9,7 +9,7 @@ export const Modal = () => {
             { openModal && (
                 <div className="modal-container">
                     <div className="modal-content">
-                        <button onClick={() => setState(state => ({...state, openModal: false }))}>Close Modal</button>
+                        <button onClick={() => setState({...state, openModal: false })}>Close Modal</button>
                     </div>
                 </div>
             )}

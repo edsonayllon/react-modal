@@ -10,7 +10,7 @@ export const Content = () => {
             <p>
             Edit <code>src/App.js</code> and save to reload.
             </p>
-            <button onClick={() => setState(state => ({...state, openModal: true }))}>Open Modal</button>
+            <button onClick={() => setState({...state, openModal: true })}>Open Modal</button>
 
         </header>
     );
