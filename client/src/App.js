@@ -1,24 +1,17 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import { Modal, Content } from 'components';
+import { GlobalState, devState } from 'globalState';
 
-function App() {
+const App = () => {
+  const [state, setState] = useState(devState);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalState.Provider value={[state, setState]}>
+      <div className="App">
+        <Modal />
+        <Content />
+      </div>
+    </GlobalState.Provider>
   );
 }
 
